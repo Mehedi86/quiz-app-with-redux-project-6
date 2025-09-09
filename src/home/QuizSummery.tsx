@@ -44,7 +44,7 @@ export default function QuizSummery() {
                     <h3 className='mb-2 font-semibold'>You got: {correctAns} out of {questions.length}</h3>
                     {/* progress bar */}
                     <div>
-                        <Progress value={33} className="w-full bg-rose-600 h-4" />
+                        <Progress value={percentage} className="w-full bg-rose-600 h-4" />
                         <div className='flex justify-between mt-2'>
                             <span>{percentage}%</span>
                             <span>Perfomance: Good</span>
