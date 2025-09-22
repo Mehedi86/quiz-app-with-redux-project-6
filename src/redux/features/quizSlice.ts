@@ -9,7 +9,7 @@ interface QuizState {
 }
 
 const initialState: QuizState = {
-    questions: quizData,
+    questions: [],
     currentQuestionIndex: 0,
     userAnswer: Array(quizData.length).fill(null),
     quizComplete: false
@@ -35,9 +35,12 @@ export const quizSlice = createSlice({
         },
         changeComplete: (state) => {
             state.quizComplete = true;
+        },
+        setQuiz: (state, action) =>{
+            state.questions = action.payload
         }
     }
 })
 
-export const { setAnswer, nextQuestion, previousQuestion, changeComplete } = quizSlice.actions
+export const { setAnswer, nextQuestion, previousQuestion, changeComplete, setQuiz } = quizSlice.actions
 export default quizSlice.reducer

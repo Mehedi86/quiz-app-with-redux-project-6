@@ -21,9 +21,10 @@ export default function Question() {
         console.log("Selected:", ans)
     }
 
+
     return (
         <div className='flex justify-center mt-12'>
-            <Card className='w-[450px]'>
+            {questions.length ? (<Card className='w-[450px]'>
                 <CardHeader>
                     <h1 className='font-semibold text-2xl p-2 shadow w-1/2 mx-auto mt-4 mb-8 text-center'>Quiz: {questionNumber}/10</h1>
                     <CardTitle className='px-4'>{currentQuestion.question}</CardTitle>
@@ -41,7 +42,7 @@ export default function Question() {
                     </div>
                     <QuizControls />
                 </CardContent>
-            </Card>
+            </Card>) : ''}
         </div>
     )
 }
